@@ -32,6 +32,8 @@ const Register = async(req,res) =>{
                 email:email
             });
 
+            //generate token
+
             const token = jwt.sign({userId:result._id},JWT_TOKEN);
 
             res.json(jsonGenerate(statusCode.SUCCESS,"User Registered",{userId:result._id,token:token}));

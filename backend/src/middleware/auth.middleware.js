@@ -8,12 +8,15 @@ const AuthMiddleware = (req, res, next) => {
     }
 
     const token = req.headers['auth'];
+    //console.log(token)
 
     try {
         const decoded = Jwt.verify(token,JWT_TOKEN);
         console.log(decoded);
 
         req.userId = decoded.userId;
+        
+        //console.log("req.userId",req.userId);
 
         return next();
 

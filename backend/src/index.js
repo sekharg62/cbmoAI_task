@@ -15,11 +15,10 @@ mongoose.connect(process.env.MONGODB_URI)
 
 const PORT = process.env.PORT || 3000;
 
-
-app.listen(PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`);
-})
-
 app.use(express.json())
 app.use('/api/',apiRoute);
-app.use('/api/',AuthMiddleware,apiProtected);
+app.use('/api/', AuthMiddleware, apiProtected);
+
+app.listen(PORT, ()=>{
+  console.log(`Server is running on port ${PORT}`);
+})

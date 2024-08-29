@@ -4,7 +4,7 @@ import { statusCode } from "../utils/constants.js";
 import Task from "../models/Task.model.js";
 import User from "../models/User.model.js";
 
-export const createTodo = async(req,res)=>{
+export const createTask = async(req,res)=>{
 
     const error = validationResult(req);
 

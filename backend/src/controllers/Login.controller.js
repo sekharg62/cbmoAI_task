@@ -28,9 +28,9 @@ const Login = async (req, res) => {
         }
 
         //generate token
-        const token = Jwt.sign({useId:user._id},JWT_TOKEN);
+        const token = Jwt.sign({userId: user._id},JWT_TOKEN);
 
-        return res.json(jsonGenerate(statusCode.SUCCESS,"Login successful",{userID:user._id,token:token}));
+        return res.json(jsonGenerate(statusCode.SUCCESS,"Login successful",{userId: user._id, token:token}));
         
 
     }

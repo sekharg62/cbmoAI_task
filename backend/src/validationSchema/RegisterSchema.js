@@ -5,8 +5,6 @@ export const RegisterSchema = [
 
     check('name')
     .trim()
-    .isAlpha()
-    .withMessage('Name must be alphabetic')
     .isLength({min:3})
     .withMessage('Name must be at least 3 characters long'),
 
