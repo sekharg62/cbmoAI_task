@@ -20,7 +20,7 @@ const Register = async(req,res) =>{
         const userExists = await User.findOne({$or:[{username:username},{email:email}]});
 
         if(userExists){
-            return res.json(statusCode.UNPROCESSABLE_ENTITY,"User Already Exists");
+            return res.json(statusCode.UNPROCESSABLE_ENTITY,"User Already Exists",null);
         }
         
         //save to database

@@ -14,9 +14,10 @@ export const DeleteTask = async(req,res)=>{
 
     try {
         const taskResult = await Task.findOneAndDelete({
-            _id:req.body.task_id,
-            userId: req.useId,
+            userId: req.userId,
+            _id: req.body.task_id
         });
+        console.log(taskResult);
 
         if(taskResult){
 
